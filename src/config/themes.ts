@@ -6,9 +6,11 @@ export const colors = {
 
   red: '#DD4747',
   green: '#24BE52',
+  light: '#F8F8F8',
   lightGrey: '#BEBEBE',
   grey: '#9C9C9C',
   darkGrey: '#434343',
+  dark: '#404040',
 }
 
 export const darkTheme: DefaultTheme = {
@@ -17,10 +19,10 @@ export const darkTheme: DefaultTheme = {
       text: colors.white,
     },
     secondary: {
-      text: colors.grey,
+      text: [colors.light, colors.lightGrey, colors.grey, colors.darkGrey, colors.dark],
     },
     info: {
-      text: colors.lightGrey,
+      text: colors.red,
     },
     common: {
       white: colors.white,
@@ -38,7 +40,7 @@ export const darkTheme: DefaultTheme = {
     },
   },
   gradients: {
-    black: 'linear-gradient(180deg, #393939 0.78%, #2A2A2A 85.32%)',
+    dark: 'linear-gradient(180deg, #393939 0.78%, #2A2A2A 85.32%)',
     gold: 'conic-gradient(from 90deg at 50% 50%, #FFFFFF -270deg, #FFD300 33.25deg, #F0E8E2 62.53deg, #FFFFFF 90deg, #FFD300 393.25deg)',
     green:
       'conic-gradient(from 90deg at 50% 50%, #FFFFFF -270deg, #4DB512 33.25deg, #F0E8E2 62.53deg, #FFFFFF 90deg, #4DB512 393.25deg)',
