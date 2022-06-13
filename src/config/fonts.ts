@@ -1,29 +1,31 @@
 export const sizes = {
-  h1: '39.7px',
-  h2: '29.8px',
-  h3: '28px',
-  h4: '26px',
-  h5: '25px',
-  h6: '23px',
+  h1: 39.7,
+  h2: 29.8,
+  h3: 28,
+  h4: 26,
+  h5: 25,
+  h6: 23,
 
-  body1: '22.1px',
-  body2: '20px',
-  body3: '17px',
-  body4: '15px',
-  body5: '12.7px',
+  body1: 22.1,
+  body2: 20,
+  body3: 17,
+  body4: 15,
+  body5: 12.7,
 }
 
 export const fonts = {
-  h1: `font-family: Open-Sans; font-sizes: ${sizes.h1}; line-height: 44px`,
-  h2: `font-family: Open-Sans; font-sizes: ${sizes.h2}; line-height: 44px`,
-  h3: `font-family: Open-Sans; font-sizes: ${sizes.h3}; line-height: 38px`,
-  h4: `font-family: Crimson-Pro; font-sizes: ${sizes.h4}; line-height: 31px`,
-  h5: `font-family: Open-Sans; font-sizes: ${sizes.h5}; line-height: 34px`,
-  h6: `font-family: Open-Sans; font-sizes: ${sizes.h6}; line-height: 28px`,
+  h1: {fontFamily: 'OpenSans-Bold', fontSize: sizes.h1, lineHeight: 44},
+  h2: {fontFamily: 'OpenSans-Italic', fontSize: sizes.h2, lineHeight: 44},
+  h3: {fontFamily: 'OpenSans-Bold', fontSize: sizes.h3, lineHeight: 38},
+  h4: {fontFamily: 'CrimsonPro-LightItalic', fontSize: sizes.h4, lineHeight: 31},
+  h5: {fontFamily: 'OpenSans-Bold', fontSize: sizes.h5, lineHeight: 34},
+  h6: {fontFamily: 'OpenSans-Bold', fontSize: sizes.h6, lineHeight: 28},
 
-  body1: `font-family: Open-Sans; font-sizes: ${sizes.body1}; line-height: 18px`,
-  body2: `font-family: Crimson-Pro; font-sizes: ${sizes.body2}; line-height: 24px`,
-  body3: `font-family: Crimson-Pro; font-sizes: ${sizes.body3}; line-height: 23px`,
-  body4: `font-family: Open-Sans; font-sizes: ${sizes.body4}; line-height: 20px`,
-  body5: `font-family: Crimson-Pro; font-sizes: ${sizes.body5}; line-height: 20px`,
+  body1: {fontFamily: 'OpenSans-Bold', fontSize: sizes.body1, lineHeight: 18},
+  body2: {fontFamily: 'CrimsonPro-LightItalic', fontSize: sizes.body2, lineHeight: 24},
+  body3: {fontFamily: 'CrimsonPro-LightItalic', fontSize: sizes.body3, lineHeight: 23},
+  body4: {fontFamily: 'OpenSans-Bold', fontSize: sizes.body4, lineHeight: 20},
+  body5: {fontFamily: 'CrimsonPro-LightItalic', fontSize: sizes.body5, lineHeight: 20},
 }
+
+export type FontType = typeof fonts
