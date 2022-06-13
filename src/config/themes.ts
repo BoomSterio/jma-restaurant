@@ -53,8 +53,13 @@ export const darkTheme = {
     s: 8,
     m: 16,
     l: 24,
-    xl: 40,
+    xl: 28,
+    xxl: 40,
   },
 }
+
+export type PaletteType = typeof darkTheme.palette
+export type SpacingType = typeof darkTheme.spacing
+export type GradientsType = typeof darkTheme.gradients
 
 export type TextColorType = typeof darkTheme.palette.text

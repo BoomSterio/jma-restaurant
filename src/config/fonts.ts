@@ -14,6 +14,8 @@ export const sizes = {
 }
 
 export const fonts = {
+  logo: {fontFamily: 'Rajdhani-Bold', fontSize: sizes.h3, lineHeight: 36, letterSpacing: 0.25},
+  
   h1: {fontFamily: 'OpenSans-Bold', fontSize: sizes.h1, lineHeight: 44},
   h2: {fontFamily: 'OpenSans-Italic', fontSize: sizes.h2, lineHeight: 44},
   h3: {fontFamily: 'OpenSans-Bold', fontSize: sizes.h3, lineHeight: 38},
