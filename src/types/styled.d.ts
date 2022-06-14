@@ -6,7 +6,6 @@ import { FontType } from 'config/fonts'
 declare module 'styled-components' {
   export interface DefaultTheme {
     palette: PaletteType
-    gradients: GradientsType
     spacing: SpacingType
     fonts: FontType
   }

@@ -23,10 +23,10 @@ const Header = () => {
   return (
     <Wrapper>
       <Text variant='logo'>PDF™</Text>
-      <Text variant='h6' style={{alignSelf: 'flex-end'}}>HEJ ANNA</Text>
+      <Text variant='h6' style={{alignSelf: 'flex-end'}}>HI ANNA</Text>
       <Actions>
         <ScanIcon />
-        <ScanIcon />
+        {/* <ScanIcon /> */}
       </Actions>
     </Wrapper>
   )

@@ -1,5 +1,3 @@
-import { DefaultTheme } from 'styled-components'
-
 export const colors = {
   white: '#FFFFFF',
   black: '#1E1E1E',
@@ -42,12 +40,6 @@ export const darkTheme = {
       background: colors.darkGrey,
     },
   },
-  gradients: {
-    dark: 'linear-gradient(180deg, #393939 0.78%, #2A2A2A 85.32%)',
-    gold: 'conic-gradient(from 90deg at 50% 50%, #FFFFFF -270deg, #FFD300 33.25deg, #F0E8E2 62.53deg, #FFFFFF 90deg, #FFD300 393.25deg)',
-    green:
-      'conic-gradient(from 90deg at 50% 50%, #FFFFFF -270deg, #4DB512 33.25deg, #F0E8E2 62.53deg, #FFFFFF 90deg, #4DB512 393.25deg)',
-  },
   spacing: {
     xs: 4,
     s: 8,
@@ -60,6 +52,5 @@ export const darkTheme = {
 
 export type PaletteType = typeof darkTheme.palette
 export type SpacingType = typeof darkTheme.spacing
-export type GradientsType = typeof darkTheme.gradients
 
 export type TextColorType = typeof darkTheme.palette.text
