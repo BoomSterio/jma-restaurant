@@ -8,11 +8,11 @@ const Wrapper = styled(View)`
 
   width: 27px;
   height: 27px;
-  background: #D8D8D8;
+  background: #d8d8d8;
   border: 0.605px solid #979797;
   border-radius: 5.3422px;
   margin: 7px;
-  margin-left: ${({theme}) => theme.spacing.s}px;
+  margin-left: ${({ theme }) => theme.spacing.s}px;
 `
 
 const Rectangle = styled(View)`

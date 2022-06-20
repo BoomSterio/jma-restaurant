@@ -23,7 +23,7 @@ export const darkTheme = {
     },
     info: {
       success: colors.green,
-      error: colors.red
+      error: colors.red,
     },
     common: {
       white: colors.white,

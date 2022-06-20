@@ -23,11 +23,13 @@ const Provider: FunctionComponent<LocaleProps> = ({ children, persistKey = '@loc
       try {
         const persistLocale = await AsyncStorage.getItem(persistKey)
         const persistValue =
-          (persistLocale && persistLocale in localesLanguages && (persistLocale as localesLanguages)) ||
+          (persistLocale &&
+            persistLocale in localesLanguages &&
+            (persistLocale as localesLanguages)) ||
           defaultLocale
 
         setLocale(persistValue)
-      } catch(error) {
+      } catch (error) {
         console.warn(error)
       }
     }

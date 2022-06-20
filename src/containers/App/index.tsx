@@ -8,7 +8,7 @@ import LocaleProvider from 'providers/Locale'
 
 const App = () => {
   return (
-    <ThemeProvider theme={{...darkTheme, fonts}}>
+    <ThemeProvider theme={{ ...darkTheme, fonts }}>
       <LocaleProvider>
         <Layout />
       </LocaleProvider>

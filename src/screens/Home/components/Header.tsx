@@ -11,8 +11,8 @@ const Wrapper = styled(View)`
   justify-content: space-between;
   width: 100%;
 
-  padding-vertical: ${({theme}) => theme.spacing.xl}px;
-  padding-horizontal: ${({theme}) => theme.spacing.m}px;
+  padding-vertical: ${({ theme }) => theme.spacing.xl}px;
+  padding-horizontal: ${({ theme }) => theme.spacing.m}px;
 `
 const Actions = styled(View)`
   flex-direction: row;
@@ -22,8 +22,10 @@ const Actions = styled(View)`
 const Header = () => {
   return (
     <Wrapper>
-      <Text variant='logo'>PDF™</Text>
-      <Text variant='h6' style={{alignSelf: 'flex-end'}}>HI ANNA</Text>
+      <Text variant="logo">PDF™</Text>
+      <Text variant="h6" style={{ alignSelf: 'flex-end' }}>
+        HI ANNA
+      </Text>
       <Actions>
         <ScanIcon />
         {/* <ScanIcon /> */}

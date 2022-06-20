@@ -5,6 +5,10 @@ module.exports = {
     quotes: ['warn', 'single'],
     semi: 0,
     endOfLine: 0,
-    allowTemplateLiterals: true,
+    allowTemplateLiterals: 0,
+    'react-native/no-inline-styles': 0,
+    'react-hooks/exhaustive-deps': 1,
+    '@typescript-eslint/no-unused-vars': 1,
+    'prettier/prettier': 1,
   },
 }

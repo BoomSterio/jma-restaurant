@@ -25,6 +25,4 @@ export const signedInRoutes: Route[] = [
   },
 ]
 
-export const signedOutRoutes: Route[] = [
-
-]
+export const signedOutRoutes: Route[] = []

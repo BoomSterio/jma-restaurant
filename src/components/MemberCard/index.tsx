@@ -3,14 +3,14 @@ import GoldCard from './cards/GoldCard'
 
 enum memberCardType {
   gold = 'gold',
-  platinum = 'platinum'
+  platinum = 'platinum',
 }
 
 interface MemberCardProps {
   type?: memberCardType
 }
 
-export const MemberCard = ({type}: MemberCardProps) => {
+export const MemberCard = ({ type }: MemberCardProps) => {
   switch (type) {
     case memberCardType.gold: {
       return <GoldCard />

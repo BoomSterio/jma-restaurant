@@ -1,9 +1,9 @@
-import { RawLocalesList } from '.';
+import { RawLocalesList } from '.'
 
 const messages: RawLocalesList = {
   homePage: {
     title: 'Stockholm`s best dining experiences',
-    description: 'Lorem ipsum dolor sit amet'
+    description: 'Lorem ipsum dolor sit amet',
   },
   login: {
     title: 'Login',
@@ -40,6 +40,6 @@ const messages: RawLocalesList = {
     maxLength: `Max length {length, number} characters`,
     exactLength: `Should be exactly {length, number} characters`,
   },
-};
+}
 
-export default messages;
+export default messages

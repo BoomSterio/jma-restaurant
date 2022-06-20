@@ -3,7 +3,6 @@ import React from 'react'
 import styled from 'styled-components'
 import LinearGradient from 'react-native-linear-gradient'
 
-
 import Wrapper from '../components/Wrapper'
 import { Text } from 'components'
 
@@ -28,7 +27,7 @@ const Content = styled(View)`
 const CardInfo = styled(View)`
   padding-left: 19px;
   padding-top: 16px;
-  padding-bottom: ${({theme}) => theme.spacing.xxl}px;
+  padding-bottom: ${({ theme }) => theme.spacing.xxl}px;
 `
 
 const Heading = styled(View)`
@@ -57,10 +56,8 @@ const GoldCard = () => {
         <Content>
           <CardInfo>
             <Heading>
-              <Text variant='logo'>
-                PDF™
-              </Text>
-              <Text variant='body4' color='p2'>
+              <Text variant="logo">PDF™</Text>
+              <Text variant="body4" color="p2">
                 GOLD MEMBER
               </Text>
             </Heading>

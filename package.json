@@ -8,13 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "prettier": "prettier --config \"./.prettierrc\" --write \"src/**/*.{ts,tsx,json}\"",
-    "lint": "eslint .",
-    "precommit": "yarn lint && yarn prettier"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint && yarn prettier"
-    }
+    "lint": "eslint ."
   },
   "dependencies": {
     "@formatjs/intl": "^2.3.0",

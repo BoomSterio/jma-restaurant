@@ -7,7 +7,7 @@ import { Text } from 'components'
 
 const Wrapper = styled(View)`
   align-items: center;
-  margin-top: ${({theme}) => theme.spacing.xl}px;
+  margin-top: ${({ theme }) => theme.spacing.xl}px;
   width: 100%;
 `
 
@@ -16,10 +16,10 @@ const Title = () => {
 
   return (
     <Wrapper>
-      <Text variant='h1' style={{textAlign: 'center'}}>
+      <Text variant="h1" style={{ textAlign: 'center' }}>
         {intl.formatMessage({ id: 'homePage.title' })}
       </Text>
-      <Text margin={'m'} variant='h4'>
+      <Text margin={'m'} variant="h4">
         {intl.formatMessage({ id: 'homePage.description' })}
       </Text>
     </Wrapper>
