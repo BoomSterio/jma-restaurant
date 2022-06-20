@@ -1,6 +1,7 @@
 import React from 'react'
 import { View } from 'react-native'
 import styled from 'styled-components'
+import { useIntl } from 'react-intl'
 
 import { Text } from 'components'
 
@@ -11,13 +12,15 @@ const Wrapper = styled(View)`
 `
 
 const Title = () => {
+  const intl = useIntl()
+
   return (
     <Wrapper>
       <Text variant='h1' style={{textAlign: 'center'}}>
-        Stockholm's best dining experiences
+        {intl.formatMessage({ id: 'homePage.title' })}
       </Text>
       <Text margin={'m'} variant='h4'>
-        Lorem ipsum dolor sit amet
+        {intl.formatMessage({ id: 'homePage.description' })}
       </Text>
     </Wrapper>
   )
