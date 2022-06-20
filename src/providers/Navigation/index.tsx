@@ -13,7 +13,7 @@ const screenOptions = {
 export const Routes = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={Screens.Home} screenOptions={screenOptions}>
+      <Stack.Navigator initialRouteName={Screens.home} screenOptions={screenOptions}>
         {signedInRoutes.map((route: Route) => (
           <Stack.Screen key={route.name} name={route.name} component={route.component} />
         ))}

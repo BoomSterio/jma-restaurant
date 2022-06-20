@@ -4,7 +4,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { Home } from 'screens'
 
 export enum Screens {
-  Home = 'Home',
+  home = 'Home',
 }
 
 type StackParamList = {
@@ -20,7 +20,7 @@ export interface Route {
 
 export const signedInRoutes: Route[] = [
   {
-    name: Screens.Home,
+    name: Screens.home,
     component: Home,
   },
 ]

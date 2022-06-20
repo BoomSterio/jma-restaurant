@@ -1,5 +1,5 @@
 import React from 'react'
-import { SafeAreaView, ScrollView, StatusBar, View } from 'react-native'
+import { StatusBar, View } from 'react-native'
 import styled from 'styled-components'
 
 import { Routes } from 'providers/Navigation'

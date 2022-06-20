@@ -2,7 +2,7 @@ module.exports = {
   root: true,
   extends: '@react-native-community',
   rules: {
-    quotes: ['warn', 'single'],
+    quotes: ['error', 'single', { allowTemplateLiterals: true }],
     semi: 0,
     endOfLine: 0,
     allowTemplateLiterals: 0,
