@@ -23,8 +23,8 @@ const Header = () => {
   return (
     <Wrapper>
       <Text variant='logo'>PDF™</Text>
-      <Text variant='h6' style={{ alignSelf: 'flex-end' }}>
-        HI ANNA
+      <Text variant='h6' style={{ alignSelf: 'flex-end' }} textTransform='uppercase'>
+        Hi Anna
       </Text>
       <Actions>
         <ScanIcon />
