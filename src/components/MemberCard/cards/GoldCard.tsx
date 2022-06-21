@@ -35,6 +35,10 @@ const Heading = styled(View)`
   align-items: flex-end;
 `
 
+const CardholderName = styled(View)`
+  margin-top: 12px;
+`
+
 const GoldCard = () => {
   return (
     <Wrapper>
@@ -56,11 +60,32 @@ const GoldCard = () => {
         <Content>
           <CardInfo>
             <Heading>
-              <Text variant="logo">PDF™</Text>
-              <Text variant="body4" color="p2">
+              <Text variant="logo" fontSize={{ smallPhone: 'h5', phone: 'h4', tablet: 'logo' }}>
+                PDF™
+              </Text>
+              <Text
+                variant="body4"
+                color="p2"
+                fontSize={{ smallPhone: 'body5', phone: 'body5', tablet: 'body4' }}
+              >
                 GOLD MEMBER
               </Text>
             </Heading>
+            <CardholderName>
+              <Text variant="h6" fontSize={{ smallPhone: 'body3', phone: 'body2', tablet: 'h6' }}>
+                ANNA{'\n'}
+                SÖDERLUN
+              </Text>
+            </CardholderName>
+            <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+              <Text
+                variant="body1"
+                color="p2"
+                fontSize={{ smallPhone: 'body4', phone: 'body3', tablet: 'body1' }}
+              >
+                • 10% rabatt{'\n'}• 2% cashback
+              </Text>
+            </View>
           </CardInfo>
           <Divider />
         </Content>

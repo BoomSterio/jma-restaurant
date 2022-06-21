@@ -40,6 +40,11 @@ export const darkTheme = {
       background: colors.darkGrey,
     },
   },
+  breakpoints: {
+    smallPhone: 0,
+    phone: 321,
+    tablet: 768,
+  },
   spacing: {
     xs: 4,
     s: 8,
@@ -52,5 +57,5 @@ export const darkTheme = {
 
 export type PaletteType = typeof darkTheme.palette
 export type SpacingType = typeof darkTheme.spacing
-
+export type BreakpointsType = typeof darkTheme.breakpoints
 export type TextColorType = typeof darkTheme.palette.text
