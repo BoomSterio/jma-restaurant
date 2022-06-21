@@ -43,7 +43,7 @@ const getBreakpointForScreenSize = ({
       return breakpoint
     }
     return acc
-  }, 'h1')
+  }, 'smallPhone')
 }
 
 const getResponsiveValue = ({ value, dimensions, theme }: GetResponsiveValueProps) => {

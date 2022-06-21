@@ -21,14 +21,15 @@ export const darkTheme = {
       p3: colors.lightGrey,
       p4: colors.light,
     },
-    info: {
+    background: {
       success: colors.green,
       error: colors.red,
+      app: colors.black,
+      default: colors.darkGrey,
     },
     common: {
       white: colors.white,
       black: colors.black,
-      background: colors.darkGrey,
     },
     action: {
       hover: 'rgba(0, 0, 0, 0.54)',
@@ -46,6 +47,7 @@ export const darkTheme = {
     tablet: 768,
   },
   spacing: {
+    none: 0,
     xs: 4,
     s: 8,
     m: 16,
@@ -59,3 +61,4 @@ export type PaletteType = typeof darkTheme.palette
 export type SpacingType = typeof darkTheme.spacing
 export type BreakpointsType = typeof darkTheme.breakpoints
 export type TextColorType = typeof darkTheme.palette.text
+export type BackgroundColorType = typeof darkTheme.palette.background

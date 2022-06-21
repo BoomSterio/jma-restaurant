@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { Routes } from 'providers/Navigation'
 
 const Wrapper = styled(View)`
-  background-color: ${({ theme }) => theme.palette.common.black};
+  background-color: ${({ theme }) => theme.palette.background.app};
   flex: 1;
 `
 
