@@ -27,16 +27,17 @@ const Content = styled(View)`
 
 const CardInfo = styled(Box)`
   padding-left: 19px;
-  padding-top: 16px;
+`
+
+const Score = styled(Box)`
+  align-items: center;
+  flex: 1;
+  padding-top: ${({ theme }) => theme.spacing.m * 2}px;
 `
 
 const Heading = styled(View)`
   flex-direction: row;
   align-items: flex-end;
-`
-
-const CardholderName = styled(View)`
-  margin-top: 12px;
 `
 
 const GoldCard = () => {
@@ -58,23 +59,30 @@ const GoldCard = () => {
           />
         </UpperLine>
         <Content>
-          <CardInfo paddingBottom={{ smallPhone: 's', phone: 'm', tablet: 'xxl' }} paddingTop='m'>
+          <CardInfo
+            paddingBottom={{ smallPhone: 's', phone: 'm', tablet: 'xxl' }}
+            paddingTop='m'
+            paddingRight='m'
+          >
             <Heading>
-              <Text variant='logo' fontSize={{ smallPhone: 'h5', phone: 'h4', tablet: 'logo' }}>
-                PDF™
-              </Text>
+              <Text variant='logo'>PDF™</Text>
               <Text
                 variant='body4'
                 color='p2'
                 fontSize={{ smallPhone: 'body5', phone: 'body5', tablet: 'body4' }}
+                textTransform='uppercase'
               >
-                GOLD MEMBER
+                Gold Member
               </Text>
             </Heading>
-            <Box marginTop={{ smallPhone: 'xs', phone: 's', tablet: 'm' }}>
-              <Text variant='h6' fontSize={{ smallPhone: 'body3', phone: 'body2', tablet: 'h6' }}>
-                ANNA{'\n'}
-                SÖDERLUN
+            <Box marginTop={{ smallPhone: 'xs', phone: 'xs', tablet: 'm' }}>
+              <Text
+                variant='h6'
+                fontSize={{ smallPhone: 'body3', phone: 'body2', tablet: 'h6' }}
+                textTransform='uppercase'
+              >
+                Anna{'\n'}
+                Soderlun
               </Text>
             </Box>
             <View style={{ flex: 1, justifyContent: 'flex-end' }}>
@@ -88,6 +96,16 @@ const GoldCard = () => {
             </View>
           </CardInfo>
           <Divider />
+          <Score paddingBottom={{ smallPhone: 's', phone: 'm', tablet: 'xxl' }} paddingTop='m'>
+            <Text
+              variant='body4'
+              color='p2'
+              fontSize={{ smallPhone: 'body5', phone: 'body5', tablet: 'body4' }}
+              textTransform='uppercase'
+            >
+              Nuvarande poäng
+            </Text>
+          </Score>
         </Content>
       </LinearGradient>
     </Wrapper>

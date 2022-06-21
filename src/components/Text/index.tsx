@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Dimensions, Text as RNText, TextProps as RNTextProps } from 'react-native'
+import { Dimensions, Text as RNText, TextProps as RNTextProps, TextStyle } from 'react-native'
 import { DefaultTheme, ThemeContext } from 'styled-components'
 
 import { FontType } from 'config/fonts'
@@ -17,6 +17,7 @@ interface TextProps extends RNTextProps {
   margin?: keyof SpacingType
   padding?: keyof SpacingType
   fontSize?: keyof FontType | Breakpoint
+  textTransform?: TextStyle['textTransform']
 }
 
 interface GetBreakpointForScreenSizeProps {
@@ -60,6 +61,7 @@ export const Text = ({
   variant = 'h2',
   color = 'primary',
   fontSize,
+  textTransform = 'none',
   ...rest
 }: TextProps) => {
   const theme = useContext(ThemeContext)
@@ -76,6 +78,7 @@ export const Text = ({
           fontSize: fontSize
             ? theme.fonts[getResponsiveValue({ value: fontSize, theme, dimensions })].fontSize
             : theme.fonts[variant].fontSize,
+          textTransform,
         },
         style,
       ]}
