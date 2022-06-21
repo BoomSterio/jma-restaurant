@@ -22,8 +22,8 @@ const Actions = styled(View)`
 const Header = () => {
   return (
     <Wrapper>
-      <Text variant="logo">PDF™</Text>
-      <Text variant="h6" style={{ alignSelf: 'flex-end' }}>
+      <Text variant='logo'>PDF™</Text>
+      <Text variant='h6' style={{ alignSelf: 'flex-end' }}>
         HI ANNA
       </Text>
       <Actions>

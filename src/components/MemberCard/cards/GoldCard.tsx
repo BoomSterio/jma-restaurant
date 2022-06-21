@@ -4,7 +4,8 @@ import styled from 'styled-components'
 import LinearGradient from 'react-native-linear-gradient'
 
 import Wrapper from '../components/Wrapper'
-import { Text } from 'components'
+import { Box } from '../../Box'
+import { Text } from '../../Text'
 
 const UpperLine = styled(View)`
   height: 2px;
@@ -24,10 +25,9 @@ const Content = styled(View)`
   flex-direction: row;
 `
 
-const CardInfo = styled(View)`
+const CardInfo = styled(Box)`
   padding-left: 19px;
   padding-top: 16px;
-  padding-bottom: ${({ theme }) => theme.spacing.xxl}px;
 `
 
 const Heading = styled(View)`
@@ -58,29 +58,29 @@ const GoldCard = () => {
           />
         </UpperLine>
         <Content>
-          <CardInfo>
+          <CardInfo paddingBottom={{ smallPhone: 's', phone: 'm', tablet: 'xxl' }} paddingTop='m'>
             <Heading>
-              <Text variant="logo" fontSize={{ smallPhone: 'h5', phone: 'h4', tablet: 'logo' }}>
+              <Text variant='logo' fontSize={{ smallPhone: 'h5', phone: 'h4', tablet: 'logo' }}>
                 PDF™
               </Text>
               <Text
-                variant="body4"
-                color="p2"
+                variant='body4'
+                color='p2'
                 fontSize={{ smallPhone: 'body5', phone: 'body5', tablet: 'body4' }}
               >
                 GOLD MEMBER
               </Text>
             </Heading>
-            <CardholderName>
-              <Text variant="h6" fontSize={{ smallPhone: 'body3', phone: 'body2', tablet: 'h6' }}>
+            <Box marginTop={{ smallPhone: 'xs', phone: 's', tablet: 'm' }}>
+              <Text variant='h6' fontSize={{ smallPhone: 'body3', phone: 'body2', tablet: 'h6' }}>
                 ANNA{'\n'}
                 SÖDERLUN
               </Text>
-            </CardholderName>
+            </Box>
             <View style={{ flex: 1, justifyContent: 'flex-end' }}>
               <Text
-                variant="body1"
-                color="p2"
+                variant='body1'
+                color='p2'
                 fontSize={{ smallPhone: 'body4', phone: 'body3', tablet: 'body1' }}
               >
                 • 10% rabatt{'\n'}• 2% cashback

@@ -16,10 +16,10 @@ const Title = () => {
 
   return (
     <Wrapper>
-      <Text variant="h1" style={{ textAlign: 'center' }}>
+      <Text variant='h1' style={{ textAlign: 'center' }}>
         {intl.formatMessage({ id: 'homePage.title' })}
       </Text>
-      <Text margin={'m'} variant="h4">
+      <Text margin={'m'} variant='h4'>
         {intl.formatMessage({ id: 'homePage.description' })}
       </Text>
     </Wrapper>

@@ -12,20 +12,20 @@ interface Breakpoint {
 
 interface BoxProps extends ViewProps {
   backgroundColor?: keyof BackgroundColorType
-  margin?: keyof SpacingType
-  marginVertical?: keyof SpacingType
-  marginHorizontal?: keyof SpacingType
-  marginLeft?: keyof SpacingType
-  marginRight?: keyof SpacingType
-  marginTop?: keyof SpacingType
-  marginBottom?: keyof SpacingType
-  padding?: keyof SpacingType
-  paddingVertical?: keyof SpacingType
-  paddingHorizontal?: keyof SpacingType
-  paddingTop?: keyof SpacingType
-  paddingBottom?: keyof SpacingType
-  paddingLeft?: keyof SpacingType
-  paddingRight?: keyof SpacingType
+  margin?: keyof SpacingType | Breakpoint
+  marginVertical?: keyof SpacingType | Breakpoint
+  marginHorizontal?: keyof SpacingType | Breakpoint
+  marginLeft?: keyof SpacingType | Breakpoint
+  marginRight?: keyof SpacingType | Breakpoint
+  marginTop?: keyof SpacingType | Breakpoint
+  marginBottom?: keyof SpacingType | Breakpoint
+  padding?: keyof SpacingType | Breakpoint
+  paddingVertical?: keyof SpacingType | Breakpoint
+  paddingHorizontal?: keyof SpacingType | Breakpoint
+  paddingTop?: keyof SpacingType | Breakpoint
+  paddingBottom?: keyof SpacingType | Breakpoint
+  paddingLeft?: keyof SpacingType | Breakpoint
+  paddingRight?: keyof SpacingType | Breakpoint
 }
 
 interface GetBreakpointForScreenSizeProps {
