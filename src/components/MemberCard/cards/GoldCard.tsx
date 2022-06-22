@@ -2,6 +2,7 @@ import { LayoutChangeEvent } from 'react-native'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import LinearGradient from 'react-native-linear-gradient'
+import { useIntl } from 'react-intl'
 
 import Wrapper from '../components/Wrapper'
 import { Box } from '../../Box'
@@ -47,6 +48,8 @@ const GoldCard = () => {
   const [scoreBarSize, setScoreBarSize] = useState(100)
   const progress = 0.8
 
+  const intl = useIntl()
+
   const onScoreLayout = (event: LayoutChangeEvent) => {
     const { width } = event.nativeEvent.layout
     const newScoreBarSize = width - 56
@@ -84,7 +87,7 @@ const GoldCard = () => {
                 fontSize={{ smallPhone: 'body5', phone: 'body5', tablet: 'body4' }}
                 textTransform='uppercase'
               >
-                Gold Member
+                {intl.formatMessage({ id: 'memberCard.goldMember' })}
               </Text>
             </Heading>
 
@@ -105,7 +108,8 @@ const GoldCard = () => {
                 color='p2'
                 fontSize={{ smallPhone: 'body4', phone: 'body3', tablet: 'body1' }}
               >
-                • 10% rabatt{'\n'}• 2% cashback
+                • 10% {intl.formatMessage({ id: 'memberCard.discount' })}
+                {'\n'}• 2% {intl.formatMessage({ id: 'memberCard.cashback' })}
               </Text>
             </Box>
           </CardInfo>
@@ -122,7 +126,7 @@ const GoldCard = () => {
                 fontSize={{ smallPhone: 'body5', phone: 'body5', tablet: 'body4' }}
                 textTransform='uppercase'
               >
-                Current score
+                {intl.formatMessage({ id: 'memberCard.currentScore' })}
               </Text>
             </Box>
 
@@ -134,7 +138,7 @@ const GoldCard = () => {
                 color='p2'
                 fontSize={{ smallPhone: 'body4', phone: 'body3', tablet: 'body2' }}
               >
-                Read more about points
+                {intl.formatMessage({ id: 'memberCard.readMore' })}
               </Text>
             </Box>
           </Score>

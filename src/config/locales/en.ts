@@ -5,6 +5,14 @@ const messages: RawLocalesList = {
     title: 'Stockholm`s best dining experiences',
     description: 'Lorem ipsum dolor sit amet',
   },
+  memberCard: {
+    goldMember: 'Gold Member',
+    platinumMember: 'Platinum Member',
+    discount: 'discount',
+    cashback: 'cashback',
+    currentScore: 'Current Score',
+    readMore: 'Read more about points',
+  },
   login: {
     title: 'Login',
     userName: 'User name',
