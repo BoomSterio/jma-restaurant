@@ -1,4 +1,4 @@
-import { LayoutChangeEvent, View } from 'react-native'
+import { LayoutChangeEvent } from 'react-native'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import LinearGradient from 'react-native-linear-gradient'
@@ -8,20 +8,20 @@ import { Box } from '../../Box'
 import { Text } from '../../Text'
 import ScoreBar from '../components/ScoreBar'
 
-const UpperLine = styled(View)`
+const UpperLine = styled(Box)`
   height: 2px;
   margin-right: ${({ theme }) => theme.spacing.l}px;
   opacity: 0.2;
 `
 
-const Divider = styled(View)`
+const Divider = styled(Box)`
   background-color: #979797;
   width: 2px;
   height: 100%;
   opacity: 0.18;
 `
 
-const Content = styled(View)`
+const Content = styled(Box)`
   flex: 1;
   flex-direction: row;
 `
@@ -36,7 +36,7 @@ const Score = styled(Box)`
   padding-top: ${({ theme }) => theme.spacing.m * 2}px;
 `
 
-const Heading = styled(View)`
+const Heading = styled(Box)`
   flex-direction: row;
   align-items: flex-end;
 `
@@ -49,7 +49,7 @@ const GoldCard = () => {
 
   const onScoreLayout = (event: LayoutChangeEvent) => {
     const { width } = event.nativeEvent.layout
-    const newScoreBarSize = width - 44
+    const newScoreBarSize = width - 56
     setScoreBarSize(newScoreBarSize > MAX_SCORE_BAR_SIZE ? MAX_SCORE_BAR_SIZE : newScoreBarSize)
   }
 
@@ -99,7 +99,7 @@ const GoldCard = () => {
               </Text>
             </Box>
 
-            <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+            <Box style={{ flex: 1, justifyContent: 'flex-end' }}>
               <Text
                 variant='body1'
                 color='p2'
@@ -107,7 +107,7 @@ const GoldCard = () => {
               >
                 • 10% rabatt{'\n'}• 2% cashback
               </Text>
-            </View>
+            </Box>
           </CardInfo>
           <Divider />
           <Score
@@ -115,18 +115,28 @@ const GoldCard = () => {
             paddingBottom={{ smallPhone: 's', phone: 'm', tablet: 'xxl' }}
             paddingTop='m'
           >
-            <Box marginBottom={{ smallPhone: 'xs', phone: 's', tablet: 'm' }}>
+            <Box marginBottom={{ smallPhone: 'none', phone: 'none', tablet: 'm' }}>
               <Text
                 variant='body4'
                 color='p2'
                 fontSize={{ smallPhone: 'body5', phone: 'body5', tablet: 'body4' }}
                 textTransform='uppercase'
               >
-                Nuvarande poäng
+                Current score
               </Text>
             </Box>
 
             <ScoreBar progress={progress} size={scoreBarSize} />
+
+            <Box style={{ flex: 1, justifyContent: 'flex-end' }}>
+              <Text
+                variant='body2'
+                color='p2'
+                fontSize={{ smallPhone: 'body4', phone: 'body3', tablet: 'body2' }}
+              >
+                Read more about points
+              </Text>
+            </Box>
           </Score>
         </Content>
       </LinearGradient>
