@@ -1,9 +1,11 @@
-import { Dimensions, View } from 'react-native'
+import { Dimensions } from 'react-native'
 import styled from 'styled-components'
+
+import { Box } from '../../Box'
 
 const width = Dimensions.get('window').width
 
-const Wrapper = styled(View)`
+const Wrapper = styled(Box)`
   width: ${({ theme }) => width - theme.spacing.l * 2}px;
   height: ${({ theme }) => (width - theme.spacing.l * 2) / 1.847}px;
   max-width: 471px;
