@@ -10,7 +10,7 @@ import Header from './components/Header'
 import Title from './components/Title'
 import ReserveTable from './components/ReserveTable'
 
-const ItemsWrapper = styled(View)`
+const Content = styled(View)`
   width: 100%;
   align-items: center;
   padding-horizontal: 12px;
@@ -21,11 +21,12 @@ export const Home = () => {
     <SafeAreaContainer>
       <Background />
       <Header />
-      <Title />
-      <ItemsWrapper>
+
+      <Content>
+        <Title />
         <MemberCard />
         <ReserveTable />
-      </ItemsWrapper>
+      </Content>
     </SafeAreaContainer>
   )
 }

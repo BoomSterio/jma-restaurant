@@ -27,13 +27,17 @@ const Title = () => {
 
   return (
     <Wrapper>
-      <Text variant='h1' style={{ textAlign: 'center' }}>
+      <Text
+        variant='h1'
+        fontSize={{ smallPhone: 'h3', phone: 'h2', tablet: 'h1' }}
+        style={{ textAlign: 'center' }}
+      >
         {intl.formatMessage({ id: 'homePage.title' })}
       </Text>
       <Text margin={'m'} variant='h4'>
         {intl.formatMessage({ id: 'homePage.description' })}
       </Text>
-      <NextButton>
+      <NextButton hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}>
         <Icon name='arrow-right' size={20} color='#fff' light />
       </NextButton>
     </Wrapper>
