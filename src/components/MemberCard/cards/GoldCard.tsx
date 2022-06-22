@@ -34,7 +34,7 @@ const CardInfo = styled(Box)`
 const Score = styled(Box)`
   align-items: center;
   flex: 1;
-  padding-top: ${({ theme }) => theme.spacing.m * 2}px;
+  padding-top: ${({ theme }) => theme.spacing.m}px;
 `
 
 const Heading = styled(Box)`
@@ -117,9 +117,8 @@ const GoldCard = () => {
           <Score
             onLayout={onScoreLayout}
             paddingBottom={{ smallPhone: 's', phone: 'm', tablet: 'xxl' }}
-            paddingTop='m'
           >
-            <Box marginBottom={{ smallPhone: 'none', phone: 'none', tablet: 'm' }}>
+            <Box marginBottom={{ smallPhone: 'none', phone: 'xs', tablet: 'm' }}>
               <Text
                 variant='body4'
                 color='p2'

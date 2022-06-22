@@ -10,7 +10,7 @@ interface Breakpoint {
   tablet: keyof SpacingType
 }
 
-interface BoxProps extends ViewProps {
+export interface BoxProps extends ViewProps {
   backgroundColor?: keyof BackgroundColorType
   margin?: keyof SpacingType | Breakpoint
   marginVertical?: keyof SpacingType | Breakpoint

@@ -12,6 +12,7 @@ import Title from './components/Title'
 const CardWrapper = styled(View)`
   width: 100%;
   align-items: center;
+  padding-horizontal: 12px;
 `
 
 export const Home = () => {

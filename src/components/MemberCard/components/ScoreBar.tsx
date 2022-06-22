@@ -29,7 +29,7 @@ const AnimatedPath = Animated.createAnimatedComponent(Path)
 
 const ScoreBar = ({ progress, size }: ScoreBarProps) => {
   const values = useMemo(() => {
-    const strokeWidth = size / 12
+    const strokeWidth = size / 14
     const { PI, cos, sin } = Math
     const r = (size - strokeWidth) / 2
     const cx = size / 2
@@ -75,7 +75,7 @@ const ScoreBar = ({ progress, size }: ScoreBarProps) => {
       />
       <ScorePoints size={size}>
         <Text variant='h6' fontSize={fontSize} style={{ letterSpacing: 1.64 }}>
-          80/100
+          800/1000
         </Text>
       </ScorePoints>
     </Svg>
