@@ -8,8 +8,9 @@ import { MemberCard } from 'components'
 import Background from './components/Background'
 import Header from './components/Header'
 import Title from './components/Title'
+import ReserveTable from './components/ReserveTable'
 
-const CardWrapper = styled(View)`
+const ItemsWrapper = styled(View)`
   width: 100%;
   align-items: center;
   padding-horizontal: 12px;
@@ -21,9 +22,10 @@ export const Home = () => {
       <Background />
       <Header />
       <Title />
-      <CardWrapper>
+      <ItemsWrapper>
         <MemberCard />
-      </CardWrapper>
+        <ReserveTable />
+      </ItemsWrapper>
     </SafeAreaContainer>
   )
 }

@@ -47,7 +47,7 @@ export const darkTheme = {
     tablet: 768,
   },
   spacing: {
-    none: 0,
+    none: undefined,
     xs: 4,
     s: 8,
     m: 16,
