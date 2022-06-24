@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Box, Header, Text } from 'components'
 import { SafeAreaContainer } from 'containers'
 import Background from './components/Background'
+import SliderContainer from './components/SliderContainer'
 
 const Content = styled(Box)`
   width: 100%;
@@ -23,6 +24,7 @@ export const TableReservation = () => {
         <Text margin={'xs'} variant='h4'>
           Lorem ipsum dolor sit amet
         </Text>
+        <SliderContainer />
       </Content>
     </SafeAreaContainer>
   )
