@@ -18,7 +18,7 @@ const Rectangle = styled(View)`
   box-sizing: border-box;
   width: 20.2px;
   height: 20.2px;
-  background: black;
+  background: ${({ theme }) => theme.palette.background.app};
   border-radius: 2.63451px;
 `
 
@@ -28,7 +28,7 @@ const VerticalStick = styled(View)`
   height: 28px;
   left: 10.2px;
   top: -1px;
-  background: black;
+  background: ${({ theme }) => theme.palette.background.app};
 `
 
 const HorizontalStick = styled(View)`
@@ -37,7 +37,7 @@ const HorizontalStick = styled(View)`
   height: 5.3px;
   left: -1px;
   top: 10.2px;
-  background: black;
+  background: ${({ theme }) => theme.palette.background.app};
 `
 
 const ScanIcon = () => {
