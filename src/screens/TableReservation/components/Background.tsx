@@ -8,7 +8,7 @@ import { BlurOval } from 'assets/images'
 
 const Container = styled(Box)`
   position: absolute;
-  height: 154px;
+  height: 194px;
   left: 9%;
   right: 9%;
   top: 194px;
@@ -53,10 +53,10 @@ const Background = () => {
           source={BlurOval}
           style={{
             flex: 1,
-            alignSelf: 'stretch',
             width: undefined,
             height: undefined,
           }}
+          resizeMode='contain'
         />
       </Container>
     </>
