@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { Box, BoxProps, Text } from 'components'
 import ScanIcon from './components/ScanIcon'
+import ListIcon from './components/ListIcon'
 
 const Wrapper = styled(Box)`
   flex-direction: row;
@@ -35,6 +36,7 @@ export const Header = ({ children }: BoxProps) => {
       <Center>{children}</Center>
       <Actions>
         <ScanIcon />
+        <ListIcon />
       </Actions>
     </Wrapper>
   )

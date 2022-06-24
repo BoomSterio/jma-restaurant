@@ -12,7 +12,6 @@ const Wrapper = styled(View)`
   border: 0.605px solid #979797;
   border-radius: 5.3422px;
   margin: 7px;
-  margin-left: ${({ theme }) => theme.spacing.s}px;
 `
 
 const Rectangle = styled(View)`
