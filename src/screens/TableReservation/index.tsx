@@ -15,9 +15,7 @@ export const TableReservation = () => {
     <SafeAreaContainer>
       <Header />
       <Background />
-      <Content paddingHorizontal={{ smallPhone: 'none', phone: 's', tablet: 'l' }}>
-
-      </Content>
+      <Content paddingHorizontal={{ smallPhone: 'none', phone: 's', tablet: 'l' }}></Content>
     </SafeAreaContainer>
   )
 }
