@@ -60,6 +60,10 @@ const ScoreBar = ({ progress, size }: ScoreBarProps) => {
           <Stop offset='0.01' stopColor='#F0E8E2' />
           <Stop offset='0.5' stopColor='#FFD300' />
         </LinearGradient>
+        <LinearGradient id='back-grad' x1='100%' y1='0' x2='0' y2='0'>
+          <Stop offset='0' stopColor='#BCBCBC' />
+          <Stop offset='0.5' stopColor='#9A9A9A' />
+        </LinearGradient>
       </Defs>
       <Path
         stroke='url(#grad)'
@@ -68,7 +72,7 @@ const ScoreBar = ({ progress, size }: ScoreBarProps) => {
         {...{ d, strokeWidth }}
       />
       <AnimatedPath
-        stroke='white'
+        stroke='url(#back-grad)'
         fill='none'
         strokeDasharray={`${circumference}, ${circumference}`}
         {...{ d, strokeDashoffset, strokeWidth }}
