@@ -22,7 +22,7 @@ export const Home = () => {
 
       <Content paddingHorizontal={{ smallPhone: 'none', phone: 's', tablet: 'l' }}>
         <Title />
-        <MemberCard />
+        <MemberCard type='platinum' />
         <ReserveTable />
       </Content>
     </SafeAreaContainer>

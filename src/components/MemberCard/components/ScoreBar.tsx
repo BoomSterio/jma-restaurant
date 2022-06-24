@@ -5,14 +5,51 @@ import styled from 'styled-components'
 
 import { Text } from 'components/Text'
 import { Box } from 'components/Box'
+import { MemberCardType } from '..'
 
 interface ScoreBarProps {
   progress: number
   size: number
+  type: MemberCardType
 }
 
 interface ScorePointsProps {
   size: number
+}
+
+type GradientType = {
+  [key in MemberCardType]: Array<{ offset: string; stopColor: string }>
+}
+
+const PATH_GRADIENT: GradientType = {
+  gold: [
+    {
+      offset: '0',
+      stopColor: '#FFFFFF',
+    },
+    {
+      offset: '0.01',
+      stopColor: '#F0E8E2',
+    },
+    {
+      offset: '0.5',
+      stopColor: '#FFD300',
+    },
+  ],
+  platinum: [
+    {
+      offset: '0',
+      stopColor: '#FFFFFF',
+    },
+    {
+      offset: '0.01',
+      stopColor: '#F0E8E2',
+    },
+    {
+      offset: '0.5',
+      stopColor: '#4DB512',
+    },
+  ],
 }
 
 const ScorePoints = styled(Box)`
@@ -27,7 +64,7 @@ const ScorePoints = styled(Box)`
 
 const AnimatedPath = Animated.createAnimatedComponent(Path)
 
-const ScoreBar = ({ progress, size }: ScoreBarProps) => {
+const ScoreBar = ({ progress, size, type }: ScoreBarProps) => {
   const values = useMemo(() => {
     const strokeWidth = size / 14
     const { PI, cos, sin } = Math
@@ -56,9 +93,9 @@ const ScoreBar = ({ progress, size }: ScoreBarProps) => {
     <Svg width={size} height={size}>
       <Defs>
         <LinearGradient id='grad' x1='0' y1='0' x2='100%' y2='0'>
-          <Stop offset='0' stopColor='#FFFFFF' />
-          <Stop offset='0.01' stopColor='#F0E8E2' />
-          <Stop offset='0.5' stopColor='#FFD300' />
+          {PATH_GRADIENT[type].map(({ offset, stopColor }, i) => (
+            <Stop key={i} offset={offset} stopColor={stopColor} />
+          ))}
         </LinearGradient>
         <LinearGradient id='back-grad' x1='100%' y1='0' x2='0' y2='0'>
           <Stop offset='0' stopColor='#BCBCBC' />

@@ -1,25 +1,20 @@
 import React from 'react'
 import GoldCard from './cards/GoldCard'
+import PlatinumCard from './cards/PlatinumCard'
 
-enum memberCardType {
-  gold = 'gold',
-  platinum = 'platinum',
-}
+export type MemberCardType = 'gold' | 'platinum'
 
 interface MemberCardProps {
-  type?: memberCardType
+  type: MemberCardType
 }
 
 export const MemberCard = ({ type }: MemberCardProps) => {
   switch (type) {
-    case memberCardType.gold: {
+    case 'gold': {
       return <GoldCard />
     }
-    case memberCardType.platinum: {
-      return <GoldCard />
-    }
-    default: {
-      return <GoldCard />
+    case 'platinum': {
+      return <PlatinumCard />
     }
   }
 }
