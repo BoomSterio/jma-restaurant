@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Box, Header } from 'components'
+import { Box, Header, Text } from 'components'
 import { SafeAreaContainer } from 'containers'
 import Background from './components/Background'
 
 const Content = styled(Box)`
   width: 100%;
   align-items: center;
+  margin-top: 100px;
 `
 
 export const TableReservation = () => {
@@ -15,7 +16,14 @@ export const TableReservation = () => {
     <SafeAreaContainer>
       <Header />
       <Background />
-      <Content paddingHorizontal={{ smallPhone: 'none', phone: 's', tablet: 'l' }}></Content>
+      <Content paddingHorizontal={{ smallPhone: 's', phone: 'm', tablet: 'xxl' }}>
+        <Text variant='h1' style={{ textAlign: 'center' }}>
+          How many of you will there be?
+        </Text>
+        <Text margin={'xs'} variant='h4'>
+          Lorem ipsum dolor sit amet
+        </Text>
+      </Content>
     </SafeAreaContainer>
   )
 }

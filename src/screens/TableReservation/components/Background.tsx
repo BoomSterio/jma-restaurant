@@ -8,11 +8,11 @@ import { BlurOval } from 'assets/images'
 
 const Container = styled(Box)`
   position: absolute;
-  height: 194px;
-  left: 9%;
-  right: 9%;
-  top: 194px;
-  opacity: 0.79;
+  height: 230px;
+  left: 12px;
+  right: 12px;
+  top: 165px;
+  opacity: 0.9;
 `
 
 const BackgroundGradient1 = styled(Box)`
