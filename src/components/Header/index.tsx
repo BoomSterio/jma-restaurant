@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Box, Text } from 'components'
-import ScanIcon from './ScanIcon'
+import { Box, BoxProps, Text } from 'components'
+import ScanIcon from './components/ScanIcon'
 
 const Wrapper = styled(Box)`
   flex-direction: row;
@@ -18,30 +18,24 @@ const Actions = styled(Box)`
   align-items: center;
 `
 
-const Greetings = styled(Box)`
+const Center = styled(Box)`
   position: absolute;
   top: 0px;
   left: 0px;
-  bottom: 0px;
+  bottom: ${({ theme }) => theme.spacing.xl}px;
   right: 0px;
-  align-items: center;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: center;
 `
 
-const Header = () => {
+export const Header = ({ children }: BoxProps) => {
   return (
     <Wrapper>
       <Text variant='logo'>PDF™</Text>
-      <Greetings paddingBottom='xl'>
-        <Text variant='h6' textTransform='uppercase'>
-          Hi Anna
-        </Text>
-      </Greetings>
+      <Center>{children}</Center>
       <Actions>
         <ScanIcon />
       </Actions>
     </Wrapper>
   )
 }
-
-export default Header

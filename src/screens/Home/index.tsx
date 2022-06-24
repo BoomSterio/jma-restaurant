@@ -2,10 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { SafeAreaContainer } from 'containers'
-import { Box, MemberCard } from 'components'
+import { Box, MemberCard, Header, Text } from 'components'
 
 import Background from './components/Background'
-import Header from './components/Header'
 import Title from './components/Title'
 import ReserveTable from './components/ReserveTable'
 
@@ -18,7 +17,11 @@ export const Home = () => {
   return (
     <SafeAreaContainer>
       <Background />
-      <Header />
+      <Header>
+        <Text variant='h6' textTransform='uppercase' style={{ alignSelf: 'flex-end' }}>
+          Hi Anna
+        </Text>
+      </Header>
 
       <Content paddingHorizontal={{ smallPhone: 'none', phone: 's', tablet: 'l' }}>
         <Title />
