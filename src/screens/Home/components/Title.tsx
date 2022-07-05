@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { useIntl } from 'react-intl'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
-import { Box, Text } from 'components'
+import { Box, Button, Text } from 'components'
 
 const Wrapper = styled(Box)`
   align-items: center;
@@ -12,7 +12,7 @@ const Wrapper = styled(Box)`
   width: 100%;
 `
 
-const NextButton = styled(TouchableOpacity)`
+const NextButton = styled(Button)`
   align-items: center;
   justify-content: center;
   width: 43px;
@@ -37,7 +37,7 @@ const Title = () => {
       <Text margin={'m'} variant='h4'>
         {intl.formatMessage({ id: 'homePage.description' })}
       </Text>
-      <NextButton hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}>
+      <NextButton onPress={() => {}} hitSlop={{ top: 16, bottom: 16, left: 16, right: 16 }}>
         <Icon name='arrow-right' size={20} color='#fff' light />
       </NextButton>
     </Wrapper>
