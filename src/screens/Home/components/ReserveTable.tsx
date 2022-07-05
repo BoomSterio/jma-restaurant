@@ -9,7 +9,6 @@ import { NavigationProps, Screens } from 'config/routes'
 
 const Button = styled(Box)`
   width: 100%;
-  max-height: 103px;
   border-radius: ${({ theme }) => theme.spacing.m}px;
 `
 
@@ -26,7 +25,13 @@ const ReserveTable = () => {
   }
 
   return (
-    <Button marginVertical='xxl' paddingTop='l' paddingHorizontal='l' backgroundColor='default'>
+    <Button
+      marginVertical='xxl'
+      paddingBottom='xs'
+      paddingTop='l'
+      paddingHorizontal='l'
+      backgroundColor='default'
+    >
       <Content onPress={handleClick} hitSlop={{ top: 48, bottom: 24, left: 32, right: 32 }}>
         <Image source={ReservationIcon} />
         <Box marginLeft='m'>

@@ -18,6 +18,7 @@ interface TextProps extends RNTextProps {
   padding?: keyof SpacingType
   fontSize?: keyof FontType | Breakpoint
   textTransform?: TextStyle['textTransform']
+  letterSpacing?: TextStyle['letterSpacing']
 }
 
 interface GetBreakpointForScreenSizeProps {
@@ -62,6 +63,7 @@ export const Text = ({
   color = 'primary',
   fontSize,
   textTransform = 'none',
+  letterSpacing,
   ...rest
 }: TextProps) => {
   const theme = useContext(ThemeContext)
@@ -79,6 +81,7 @@ export const Text = ({
             ? theme.fonts[getResponsiveValue({ value: fontSize, theme, dimensions })].fontSize
             : theme.fonts[variant].fontSize,
           textTransform,
+          letterSpacing,
         },
         style,
       ]}

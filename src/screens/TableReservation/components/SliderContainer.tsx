@@ -16,7 +16,6 @@ const ThumbContainer = styled(Box)`
 `
 
 const Wrapper = styled(Box)`
-  flex: 1;
   max-width: 343px;
   width: 100%;
   align-items: stretch;
@@ -32,7 +31,6 @@ interface ThumbProps {
 }
 
 const Thumb = ({ children }: ThumbProps) => {
-  console.log()
   return (
     <ThumbContainer>
       <Text variant='h6'>{children}</Text>
