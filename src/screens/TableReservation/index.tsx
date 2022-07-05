@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useNavigation } from '@react-navigation/native'
 
-import { Box, Header, Text } from 'components'
+import { Box, Button, Header, Text } from 'components'
 import { SafeAreaContainer } from 'containers'
 import Background from './components/Background'
 import SliderContainer from './components/SliderContainer'
 import TimeSelect from './components/TimeSelect'
+import { NavigationProps } from 'config/routes'
 
 const Content = styled(Box)`
   flex: 1;
@@ -15,6 +17,8 @@ const Content = styled(Box)`
 `
 
 export const TableReservation = () => {
+  const navigation = useNavigation<NavigationProps>()
+
   return (
     <SafeAreaContainer>
       <Header />
@@ -35,9 +39,14 @@ export const TableReservation = () => {
         </Box>
         <TimeSelect />
         <Box style={{ flex: 1, justifyContent: 'flex-end' }}>
-          <Text variant='body1' color='p2' style={{ textDecorationLine: 'underline' }}>
-            Back
-          </Text>
+          <Button
+            onPress={() => navigation.goBack()}
+            hitSlop={{ top: 16, bottom: 16, left: 16, right: 16 }}
+          >
+            <Text variant='body1' color='p2' style={{ textDecorationLine: 'underline' }}>
+              Back
+            </Text>
+          </Button>
         </Box>
       </Content>
     </SafeAreaContainer>
