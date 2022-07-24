@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useNavigation } from '@react-navigation/native'
+import Icon from 'react-native-vector-icons/FontAwesome'
+import moment from 'moment'
 
-import { Box, Button, Header, Text, CalendarModule } from 'components'
+import { Box, Button, Header, Text } from 'components'
 import { SafeAreaContainer } from 'containers'
+import { NavigationProps } from 'config/routes'
+
 import Background from './components/Background'
 import SliderContainer from './components/SliderContainer'
-import TimeSelect from './components/TimeSelect'
-import { NavigationProps } from 'config/routes'
+import DateTimeSelect from './components/DateTimeSelect'
 
 const Content = styled(Box)`
   flex: 1;
@@ -16,21 +19,19 @@ const Content = styled(Box)`
   margin-top: 100px;
 `
 
-export const TableReservation = () => {
-  const navigation = useNavigation<NavigationProps>()
+const ActionsWrapper = styled(Box)`
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`
 
-  const onSubmit = async () => {
-    try {
-      const eventId = await CalendarModule.createCalendarEvent(
-        'Maksym',
-        4,
-        '2022-08-24T18:30:00.000Z',
-      )
-      console.log(`Created a new event with id ${eventId}`)
-    } catch (e) {
-      console.error(e)
-    }
-  }
+const MIN_DATE = moment().add(20, 'm').toDate()
+
+export const TableReservation = () => {
+  const [date, setDate] = useState(MIN_DATE)
+  const [visitors, setVisitors] = useState<number | number[]>(2)
+
+  const navigation = useNavigation<NavigationProps>()
 
   return (
     <SafeAreaContainer>
@@ -46,20 +47,28 @@ export const TableReservation = () => {
         <Text margin={'xs'} variant='h4'>
           Lorem ipsum dolor sit amet
         </Text>
-        <SliderContainer />
+        <SliderContainer value={visitors} setValue={setVisitors} />
         <Box marginTop='xxl'>
           <Text variant='h3'>What time?</Text>
         </Box>
-        <TimeSelect />
-        <Box style={{ flex: 1, justifyContent: 'flex-end' }}>
-          <Button
-            onPress={() => navigation.goBack()}
-            hitSlop={{ top: 16, bottom: 16, left: 16, right: 16 }}
-          >
-            <Text variant='body1' color='p2' style={{ textDecorationLine: 'underline' }}>
-              Back
-            </Text>
-          </Button>
+        <DateTimeSelect date={date} setDate={setDate} minimumDate={MIN_DATE} />
+        <Box style={{ flex: 1, width: '100%', justifyContent: 'flex-end' }}>
+          <ActionsWrapper>
+            <Button
+              onPress={() => navigation.goBack()}
+              hitSlop={{ top: 16, bottom: 16, left: 16, right: 16 }}
+            >
+              <Text variant='body1' color='p2' style={{ textDecorationLine: 'underline' }}>
+                Back
+              </Text>
+            </Button>
+            <Button
+              onPress={() => navigation.goBack()}
+              hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+            >
+              <Icon name='check-circle' size={32} color='green' />
+            </Button>
+          </ActionsWrapper>
         </Box>
       </Content>
     </SafeAreaContainer>

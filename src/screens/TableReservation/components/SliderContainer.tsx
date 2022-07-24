@@ -38,9 +38,12 @@ const Thumb = ({ children }: ThumbProps) => {
   )
 }
 
-const SliderContainer = () => {
-  const [value, setValue] = useState<number | number[]>(2)
+interface SliderProps {
+  value: number | number[]
+  setValue: React.Dispatch<React.SetStateAction<number | number[]>>
+}
 
+const SliderContainer = ({ value, setValue }: SliderProps) => {
   return (
     <Wrapper marginTop='xxl'>
       <Slider
