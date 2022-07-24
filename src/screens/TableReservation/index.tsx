@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useNavigation } from '@react-navigation/native'
 
-import { Box, Button, Header, Text } from 'components'
+import { Box, Button, Header, Text, CalendarModule } from 'components'
 import { SafeAreaContainer } from 'containers'
 import Background from './components/Background'
 import SliderContainer from './components/SliderContainer'
@@ -18,6 +18,19 @@ const Content = styled(Box)`
 
 export const TableReservation = () => {
   const navigation = useNavigation<NavigationProps>()
+
+  const onSubmit = async () => {
+    try {
+      const eventId = await CalendarModule.createCalendarEvent(
+        'Maksym',
+        4,
+        '2022-08-24T18:30:00.000Z',
+      )
+      console.log(`Created a new event with id ${eventId}`)
+    } catch (e) {
+      console.error(e)
+    }
+  }
 
   return (
     <SafeAreaContainer>
