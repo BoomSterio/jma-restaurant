@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { Box } from 'components/Box'
+import { Button, ButtonProps } from 'components/Button'
 
 const Wrapper = styled(Box)`
   align-items: flex-end;
@@ -17,13 +18,15 @@ const Line = styled(Box)`
   background: ${({ theme }) => theme.palette.common.white};
 `
 
-const ListIcon = () => {
+const ListIcon = (props: ButtonProps) => {
   return (
-    <Wrapper marginLeft={{ smallPhone: 'xs', phone: 's', tablet: 'l' }}>
-      <Line />
-      <Line />
-      <Line style={{ width: 22 }} />
-    </Wrapper>
+    <Button {...props}>
+      <Wrapper marginLeft={{ smallPhone: 'xs', phone: 's', tablet: 'l' }}>
+        <Line />
+        <Line />
+        <Line style={{ width: 22 }} />
+      </Wrapper>
+    </Button>
   )
 }
 

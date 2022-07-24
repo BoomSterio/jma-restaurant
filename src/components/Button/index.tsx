@@ -3,7 +3,7 @@ import { TouchableOpacity, TouchableOpacityProps } from 'react-native'
 
 import { Box, BoxProps } from 'components/Box'
 
-interface ButtonProps extends BoxProps {
+export interface ButtonProps extends BoxProps {
   hitSlop?: TouchableOpacityProps['hitSlop']
   onPress: TouchableOpacityProps['onPress']
 }

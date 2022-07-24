@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import { Box, BoxProps } from '../../components/Box'
 import { Text } from '../../components/Text'
-import ScanIcon from './components/ScanIcon'
 import ListIcon from './components/ListIcon'
 
 const Wrapper = styled(Box)`
@@ -36,8 +35,7 @@ export const Header = ({ children }: BoxProps) => {
       <Text variant='logo'>PDF™</Text>
       <Center>{children}</Center>
       <Actions>
-        <ScanIcon />
-        <ListIcon />
+        <ListIcon onPress={() => {}} />
       </Actions>
     </Wrapper>
   )

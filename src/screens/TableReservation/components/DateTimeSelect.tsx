@@ -22,7 +22,7 @@ const DateTimeSelect = ({ date, setDate, minimumDate }: DateTimeProps) => {
       textColor={darkTheme.palette.text.primary}
       androidVariant='nativeAndroid'
       minimumDate={minimumDate}
-      minuteInterval={10}
+      minuteInterval={5}
     />
   )
 }
