@@ -84,7 +84,7 @@ export const TableReservation = () => {
               Back
             </Text>
           </Button>
-          <Button onPress={handleSubmit} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
+          <Button onPress={handleSubmit} hitSlop={{ top: 16, bottom: 16, left: 16, right: 16 }}>
             <Text variant='body1' color='primary'>
               Confirm
             </Text>
