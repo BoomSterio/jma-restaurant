@@ -7,9 +7,9 @@ import { PlatinumCardBackground } from 'assets/images'
 import Wrapper from '../components/Wrapper'
 import { Box } from '../../Box'
 import { Text } from '../../Text'
-import Divider from '../components/Divider'
 import ScoreBar from '../components/ScoreBar'
 import ReadMore from '../components/ReadMore'
+import { Divider } from 'components/Divider'
 
 const Background = styled(ImageBackground)`
   flex: 1;

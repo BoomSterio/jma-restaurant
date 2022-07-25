@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useNavigation } from '@react-navigation/native'
 import moment from 'moment'
+import 'react-native-get-random-values'
 import { v4 as uuidv4 } from 'uuid'
 
 import { Box, Button, Header, Text } from 'components'
@@ -51,6 +52,7 @@ export const TableReservation = () => {
       date: moment(date).toISOString(),
       visitors: Array.isArray(visitors) ? visitors[0] : visitors,
     }
+    console.log(newReservation)
     await setValue([...storedValue, newReservation])
 
     navigation.goBack()

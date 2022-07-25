@@ -1,16 +1,25 @@
 import React from 'react'
+import { Image } from 'react-native'
 import styled from 'styled-components'
-import { NavigationContainer } from '@react-navigation/native'
+import { NavigationContainer, useNavigation } from '@react-navigation/native'
 import { createDrawerNavigator, DrawerContentScrollView } from '@react-navigation/drawer'
 import moment from 'moment'
+import Icon from 'react-native-vector-icons/FontAwesome'
 
-import { Screens, signedInRoutes, Route } from 'config/routes'
+import { Screens, signedInRoutes, Route, NavigationProps } from 'config/routes'
 import { useAsyncStorage } from 'hooks'
-import { Box, BoxProps, Text } from 'components'
+import { Box, BoxProps, Text, Divider, Button } from 'components'
 import { ReservationType } from 'screens'
+import { ReservationIcon } from 'assets/icons'
 
 const DrawerMenu = styled(DrawerContentScrollView)`
+  padding: ${({ theme }) => theme.spacing.s}px;
   background-color: ${({ theme }) => theme.palette.background.app};
+`
+
+const Actions = styled(Box)`
+  flex-direction: row;
+  align-items: center;
 `
 
 interface ReservationProps extends BoxProps {
@@ -19,7 +28,7 @@ interface ReservationProps extends BoxProps {
 
 const Reservation = ({ reservation, ...props }: ReservationProps) => {
   return (
-    <Box padding='m' {...props}>
+    <Box padding='s' {...props}>
       <Box marginBottom='s' style={{ flexDirection: 'row' }}>
         <Text variant='body1'>
           {reservation.name}, {reservation.visitors}
@@ -36,11 +45,36 @@ const screenOptions = {
 
 function CustomDrawerContent(props: any) {
   const { storedValue } = useAsyncStorage<ReservationType[]>('@reservations', [])
+  const { navigate } = useNavigation<NavigationProps>()
+
+  const handleReserve = () => {
+    navigate(Screens.tableReservation)
+  }
 
   return (
     <DrawerMenu {...props}>
+      <Actions marginBottom='m'>
+        <Button
+          padding='s'
+          onPress={handleReserve}
+          hitSlop={{ top: 16, bottom: 16, left: 16, right: 16 }}
+        >
+          <Image style={{ width: 36, height: 36 }} resizeMode='contain' source={ReservationIcon} />
+        </Button>
+        <Divider color={'#979797'} marginHorizontal='s' />
+        <Button
+          padding='s'
+          onPress={() => {}}
+          hitSlop={{ top: 16, bottom: 16, left: 16, right: 16 }}
+        >
+          <Icon name='sign-out' color='#fff' size={36} />
+        </Button>
+      </Actions>
       {storedValue?.map((res: ReservationType) => (
-        <Reservation key={res?.id} reservation={res} />
+        <React.Fragment key={res?.id}>
+          <Divider orientation='horizontal' color={'#979797'} />
+          <Reservation reservation={res} />
+        </React.Fragment>
       ))}
     </DrawerMenu>
   )
