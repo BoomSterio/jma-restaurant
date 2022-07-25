@@ -1,18 +1,27 @@
 import { RawLocalesList } from '.'
 
+const homePage = {
+  title: 'Stockholm`s best dining experiences',
+  description: 'Lorem ipsum dolor sit amet',
+}
+
+const memberCard = {
+  goldMember: 'Gold Member',
+  platinumMember: 'Platinum Member',
+  discount: 'discount',
+  cashback: 'cashback',
+  currentScore: 'Current Score',
+  readMore: 'Read more about points',
+}
+
+const menu = {
+  yourReservations: 'Your reservations',
+}
+
 const messages: RawLocalesList = {
-  homePage: {
-    title: 'Stockholm`s best dining experiences',
-    description: 'Lorem ipsum dolor sit amet',
-  },
-  memberCard: {
-    goldMember: 'Gold Member',
-    platinumMember: 'Platinum Member',
-    discount: 'discount',
-    cashback: 'cashback',
-    currentScore: 'Current Score',
-    readMore: 'Read more about points',
-  },
+  homePage,
+  memberCard,
+  menu,
   login: {
     title: 'Login',
     userName: 'User name',

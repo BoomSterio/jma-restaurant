@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { NavigationContainer, useNavigation } from '@react-navigation/native'
 import { createDrawerNavigator, DrawerContentScrollView } from '@react-navigation/drawer'
 import moment from 'moment'
+import { useIntl } from 'react-intl'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 import { Screens, signedInRoutes, Route, NavigationProps } from 'config/routes'
@@ -46,6 +47,7 @@ const screenOptions = {
 function CustomDrawerContent(props: any) {
   const { storedValue } = useAsyncStorage<ReservationType[]>('@reservations', [])
   const { navigate } = useNavigation<NavigationProps>()
+  const intl = useIntl()
 
   const handleReserve = () => {
     navigate(Screens.tableReservation)
@@ -70,6 +72,9 @@ function CustomDrawerContent(props: any) {
           <Icon name='sign-out' color='#fff' size={36} />
         </Button>
       </Actions>
+      <Text variant='body1' style={{ marginBottom: 4 }}>
+        {intl.formatMessage({ id: 'menu.yourReservations' })}
+      </Text>
       {storedValue?.map((res: ReservationType) => (
         <React.Fragment key={res?.id}>
           <Divider orientation='horizontal' color={'#979797'} />
