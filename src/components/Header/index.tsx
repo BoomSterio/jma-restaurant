@@ -1,4 +1,5 @@
 import React from 'react'
+import { DrawerActions, useNavigation } from '@react-navigation/native'
 import styled from 'styled-components'
 
 import { Box, BoxProps } from '../../components/Box'
@@ -30,12 +31,14 @@ const Center = styled(Box)`
 `
 
 export const Header = ({ children }: BoxProps) => {
+  const navigation = useNavigation()
+
   return (
     <Wrapper>
       <Text variant='logo'>PDF™</Text>
       <Center>{children}</Center>
       <Actions>
-        <ListIcon onPress={() => {}} />
+        <ListIcon onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} />
       </Actions>
     </Wrapper>
   )

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useNavigation } from '@react-navigation/native'
 import moment from 'moment'
+import { v4 as uuidv4 } from 'uuid'
 
 import { Box, Button, Header, Text } from 'components'
 import { SafeAreaContainer } from 'containers'
@@ -27,20 +28,28 @@ const ActionsWrapper = styled(Box)`
   justify-content: space-between;
 `
 
+export interface ReservationType {
+  id: string
+  date: string
+  name: string
+  visitors: number
+}
+
 const MIN_DATE = moment().add(20, 'm').toDate()
 
 export const TableReservation = () => {
-  const { storedValue, setValue } = useAsyncStorage('@reservations', [])
+  const { storedValue, setValue } = useAsyncStorage<ReservationType[]>('@reservations', [])
   const [date, setDate] = useState(MIN_DATE)
   const [visitors, setVisitors] = useState<number | number[]>(2)
 
   const navigation = useNavigation<NavigationProps>()
 
   const handleSubmit = async () => {
-    const newReservation = {
+    const newReservation: ReservationType = {
+      id: uuidv4(),
       name: 'Anna',
       date: moment(date).toISOString(),
-      visitors,
+      visitors: Array.isArray(visitors) ? visitors[0] : visitors,
     }
     await setValue([...storedValue, newReservation])
 

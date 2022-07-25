@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Image, TouchableOpacity } from 'react-native'
+import { Image } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 import { Box, Button, Text } from 'components'
@@ -17,10 +17,10 @@ const Content = styled(Box)`
 `
 
 const ReserveTable = () => {
-  const navigation = useNavigation<NavigationProps>()
+  const { navigate } = useNavigation<NavigationProps>()
 
   const handleClick = () => {
-    navigation.push(Screens.tableReservation)
+    navigate(Screens.tableReservation)
   }
 
   return (

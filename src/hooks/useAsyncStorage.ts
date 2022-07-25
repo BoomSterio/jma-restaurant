@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
-type StorageState = {
-  storedValue: any
-  setValue: React.Dispatch<React.SetStateAction<any>>
+interface StorageState<T> {
+  storedValue: T
+  setValue: React.Dispatch<React.SetStateAction<T>>
 }
 
-export const useAsyncStorage = (key: string, initialValue: any): StorageState => {
-  const [storedValue, setStoredValue] = useState()
+export function useAsyncStorage<T>(key: string, initialValue: T): StorageState<T> {
+  const [storedValue, setStoredValue] = useState(initialValue)
 
   useEffect(() => {
     ;(async () => {
