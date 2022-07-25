@@ -31,15 +31,6 @@ export const darkTheme = {
       white: colors.white,
       black: colors.black,
     },
-    action: {
-      hover: 'rgba(0, 0, 0, 0.54)',
-      hoverOpacity: 0.04,
-      selected: 'rgba(0, 0, 0, 0.08)',
-      selectedOpacity: 0.08,
-      disabled: colors.grey,
-      disabledBackground: colors.lightGrey,
-      background: colors.darkGrey,
-    },
   },
   breakpoints: {
     smallPhone: 0,

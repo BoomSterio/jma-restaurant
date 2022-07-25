@@ -1,8 +1,10 @@
 import React from 'react'
+import { DrawerActions, useNavigation } from '@react-navigation/native'
 import styled from 'styled-components'
 
-import { Box, Text } from 'components'
-import ScanIcon from './ScanIcon'
+import { Box, BoxProps } from '../../components/Box'
+import { Text } from '../../components/Text'
+import ListIcon from './components/ListIcon'
 
 const Wrapper = styled(Box)`
   flex-direction: row;
@@ -18,30 +20,26 @@ const Actions = styled(Box)`
   align-items: center;
 `
 
-const Greetings = styled(Box)`
+const Center = styled(Box)`
   position: absolute;
   top: 0px;
   left: 0px;
-  bottom: 0px;
+  bottom: ${({ theme }) => theme.spacing.xl}px;
   right: 0px;
-  align-items: center;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: center;
 `
 
-const Header = () => {
+export const Header = ({ children }: BoxProps) => {
+  const navigation = useNavigation()
+
   return (
     <Wrapper>
       <Text variant='logo'>PDF™</Text>
-      <Greetings paddingBottom='xl'>
-        <Text variant='h6' textTransform='uppercase'>
-          Hi Anna
-        </Text>
-      </Greetings>
+      <Center>{children}</Center>
       <Actions>
-        <ScanIcon />
+        <ListIcon onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} />
       </Actions>
     </Wrapper>
   )
 }
-
-export default Header

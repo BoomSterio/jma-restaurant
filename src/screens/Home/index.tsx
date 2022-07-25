@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import { SafeAreaContainer } from 'containers'
-import { Box, MemberCard } from 'components'
+import { Box, MemberCard, Header, Text, MemberCardType } from 'components'
 
 import Background from './components/Background'
-import Header from './components/Header'
 import Title from './components/Title'
 import ReserveTable from './components/ReserveTable'
+import { TouchableOpacity } from 'react-native'
 
 const Content = styled(Box)`
   width: 100%;
@@ -15,14 +15,31 @@ const Content = styled(Box)`
 `
 
 export const Home = () => {
+  const [cardType, setCardType] = useState<MemberCardType>('platinum')
+
+  const toggleCardType = () => {
+    setCardType((type) => {
+      if (type === 'gold') {
+        return 'platinum'
+      }
+      return 'gold'
+    })
+  }
+
   return (
     <SafeAreaContainer>
       <Background />
-      <Header />
+      <Header>
+        <Text variant='h6' textTransform='uppercase' style={{ alignSelf: 'flex-end' }}>
+          Hi Anna
+        </Text>
+      </Header>
 
       <Content paddingHorizontal={{ smallPhone: 'none', phone: 's', tablet: 'l' }}>
         <Title />
-        <MemberCard type='platinum' />
+        <TouchableOpacity onPress={toggleCardType}>
+          <MemberCard type={cardType} />
+        </TouchableOpacity>
         <ReserveTable />
       </Content>
     </SafeAreaContainer>

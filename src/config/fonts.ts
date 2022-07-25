@@ -23,7 +23,7 @@ export const fonts = {
   h5: { fontFamily: 'OpenSans-Bold', fontSize: sizes.h5, lineHeight: 34 },
   h6: { fontFamily: 'OpenSans-Bold', fontSize: sizes.h6, lineHeight: 28 },
 
-  body1: { fontFamily: 'OpenSans-Bold', fontSize: sizes.body1, lineHeight: 20 },
+  body1: { fontFamily: 'OpenSans-Bold', fontSize: sizes.body1, lineHeight: 23 },
   body2: { fontFamily: 'CrimsonPro-LightItalic', fontSize: sizes.body2, lineHeight: 24 },
   body3: { fontFamily: 'CrimsonPro-LightItalic', fontSize: sizes.body3, lineHeight: 23 },
   body4: { fontFamily: 'OpenSans-Bold', fontSize: sizes.body4, lineHeight: 20 },

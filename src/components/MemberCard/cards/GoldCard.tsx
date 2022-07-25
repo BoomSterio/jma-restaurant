@@ -8,8 +8,8 @@ import Wrapper from '../components/Wrapper'
 import { Box } from '../../Box'
 import { Text } from '../../Text'
 import ScoreBar from '../components/ScoreBar'
-import Divider from '../components/Divider'
 import ReadMore from '../components/ReadMore'
+import { Divider } from 'components/Divider'
 
 const UpperLine = styled(Box)`
   height: 2px;

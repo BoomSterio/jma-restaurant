@@ -7,9 +7,9 @@ import { PlatinumCardBackground } from 'assets/images'
 import Wrapper from '../components/Wrapper'
 import { Box } from '../../Box'
 import { Text } from '../../Text'
-import Divider from '../components/Divider'
 import ScoreBar from '../components/ScoreBar'
 import ReadMore from '../components/ReadMore'
+import { Divider } from 'components/Divider'
 
 const Background = styled(ImageBackground)`
   flex: 1;
@@ -40,7 +40,7 @@ const PlatinumCard = () => {
 
   const onScoreLayout = (event: LayoutChangeEvent) => {
     const { width } = event.nativeEvent.layout
-    const newScoreBarSize = width - 42
+    const newScoreBarSize = width - 36
     setScoreBarSize(newScoreBarSize > MAX_SCORE_BAR_SIZE ? MAX_SCORE_BAR_SIZE : newScoreBarSize)
   }
 
@@ -51,7 +51,7 @@ const PlatinumCard = () => {
           <Box
             paddingBottom={{ smallPhone: 'xs', phone: 's', tablet: 'm' }}
             paddingHorizontal={{ smallPhone: 'none', phone: 'xs', tablet: 'm' }}
-            paddingTop='m'
+            paddingTop='s'
           >
             <Heading>
               <Text variant='logo'>PDF™</Text>
@@ -92,7 +92,7 @@ const PlatinumCard = () => {
           <Score
             onLayout={onScoreLayout}
             paddingBottom={{ smallPhone: 'xs', phone: 's', tablet: 'm' }}
-            paddingTop='m'
+            paddingTop='s'
           >
             <Box marginTop='m' marginBottom={{ smallPhone: 'none', phone: 'xs', tablet: 'm' }}>
               <Text
